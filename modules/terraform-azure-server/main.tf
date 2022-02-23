@@ -31,7 +31,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   size                  = var.vm_size
   admin_username        = var.admin_username
   admin_password        = var.admin_password
-
+  allow_extension_operations = false
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = lookup(var.storage_account_type, var.location, "Standard_LRS")
